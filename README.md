@@ -1,70 +1,204 @@
-# Getting Started with Create React App
+# Calculadora React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción
 
-## Available Scripts
+Calculadora desarrollada con React y Math.js que permite realizar operaciones matemáticas básicas mediante una interfaz amigable.
 
-In the project directory, you can run:
+### Funcionalidades
 
-### `npm start`
+* Suma (+)
+* Resta (-)
+* Multiplicación (*)
+* División (/)
+* Limpieza de pantalla (C)
+* Evaluación de expresiones matemáticas (=)
+* Actualización dinámica del display
+* Componentes reutilizables
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tecnologías Utilizadas
 
-### `npm test`
+* React.js
+* JavaScript (ES6+)
+* CSS3
+* Math.js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Estructura del Proyecto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```text
+src/
+│
+├── components/
+│   ├── Button.jsx
+│   ├── Display.jsx
+│   └── Calculadora.jsx
+│
+├── styles/
+│   └── style.css
+│
+├── App.jsx
+└── main.jsx
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Instalación
 
-### `npm run eject`
+### Clonar el repositorio
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+git clone https://github.com/usuario/calculadora-react.git
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Entrar al proyecto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+cd calculadora-react
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Instalar dependencias
 
-## Learn More
+```bash
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Instalar Math.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm install mathjs
+```
 
-### Code Splitting
+### Ejecutar proyecto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm run dev
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Arquitectura
 
-### Making a Progressive Web App
+La aplicación está compuesta por tres componentes principales:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Calculadora
 
-### Advanced Configuration
+Componente principal encargado de:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* Gestionar el estado de la aplicación.
+* Capturar eventos de los botones.
+* Procesar operaciones matemáticas.
+* Actualizar el display.
 
-### Deployment
+### Display
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Muestra:
 
-### `npm run build` fails to minify
+* Expresión matemática actual.
+* Resultado de la operación.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Button
+
+Componente reutilizable para cada botón de la calculadora.
+
+---
+
+## Flujo de Funcionamiento
+
+```text
+Usuario presiona botón
+          │
+          ▼
+      Button
+          │
+          ▼
+    handleClick
+          │
+          ▼
+ Actualiza State
+          │
+          ▼
+      Display
+          │
+          ▼
+ Muestra resultado
+```
+
+### Ejemplo
+
+```text
+Usuario presiona: 7
+Display: 7
+
+Usuario presiona: +
+Display: 7+
+
+Usuario presiona: 5
+Display: 7+5
+
+Usuario presiona: =
+Display: 12
+```
+
+---
+
+## Manejo de Estado
+
+Se utiliza el Hook `useState` para almacenar la expresión actual.
+
+```jsx
+const [expression, setExpression] = useState("");
+```
+
+---
+
+## Evaluación de Expresiones
+
+Math.js permite resolver expresiones matemáticas complejas.
+
+```jsx
+import { evaluate } from "mathjs";
+
+const resultado = evaluate(expression);
+```
+
+Ejemplos válidos:
+
+```text
+5+5
+10/2
+4*8
+(5+5)*2
+```
+
+---
+
+## Mejoras Futuras
+
+* Soporte para teclado físico.
+* Historial de operaciones.
+* Modo oscuro.
+* Operaciones avanzadas.
+* Porcentajes.
+* Raíz cuadrada.
+* Potencias.
+* Responsive Design.
+
+---
+
+## Autor
+
+Proyecto desarrollado como práctica para fortalecer conocimientos en:
+
+* React.js
+* Componentes
+* Props
+* State
+* Eventos
+* Manejo de librerías externas
+* Math.js
+
+```
+```
