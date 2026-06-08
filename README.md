@@ -201,4 +201,4 @@ Proyecto desarrollado como práctica para fortalecer conocimientos en:
 * Math.js
 
 ```
-```
+```Ervinn Isaac
