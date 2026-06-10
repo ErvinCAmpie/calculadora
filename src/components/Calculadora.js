@@ -34,8 +34,8 @@ export function Calculadora() {
     
       
             <div className='section'>
-           <h1 class="text-title">Calculadora</h1>
-           <div class='section-header'>
+           <h1 className="text-title">Calculadora</h1>
+           <div className='section-header'>
             <Display value={expression}/>
            </div>
        
