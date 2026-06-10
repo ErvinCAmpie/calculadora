@@ -199,6 +199,4 @@ Proyecto desarrollado como práctica para fortalecer conocimientos en:
 * Eventos
 * Manejo de librerías externas
 * Math.js
-
-```
-```Ervinn Isaac
+Ervinn Isaac
