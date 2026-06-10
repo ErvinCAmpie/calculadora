@@ -1,6 +1,6 @@
-import { Component,useState } from "react";
+import { useState } from "react";
 import { Button } from "./Button";
-import { Display } from "./DIsplay";
+import { Display } from "./Display";
 import '../styles/style.css';
 import { evaluate } from "mathjs";
 
@@ -33,35 +33,14 @@ export function Calculadora() {
         <div className="app-fondo">
     
       
-            <div className='section'>
+            <div className="section">
            <h1 className="text-title">Calculadora</h1>
-           <div className='section-header'>
+           <div className="section-header">
             <Display value={expression}/>
            </div>
        
-          <div className='section-body'>
-           {/*
-           <Button theme='operacion' text='+' />
-               <Button theme='operacion' text='-' />
-               <Button theme='operacion' text='/' />
-               <Button theme='operacion' text='*' />
-            
-           <Button theme='Botones' text='1' />
-            <Button theme='Botones' text='2' />
-             <Button theme='Botones' text='3' />
-              <Button theme='Botones' text='4' />
-             
-              <Button theme='Botones' text='5' />
-            <Button theme='Botones' text='6' />
-             <Button theme='Botones' text='7' />
-              <Button theme='Botones' text='8' />
-              
-               <Button theme='Botones' text='9' />
-               <Button theme='Botones' text='0' />
-              <Button theme='operacion' text='C' />
-               <Button theme='operacion' text='=' />
-    
-               */}
+          <div className="section-body">
+        
                {
                 botones.map((btn)=>(
                   <Button

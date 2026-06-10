@@ -1,4 +1,4 @@
-import { Component } from "react";
+
 
 
 export function Display ({value}){

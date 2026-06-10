@@ -1,18 +1,9 @@
 
-import './App.css';
-
-
 import { Calculadora } from './components/Calculadora';
 
 import './styles/style.css';
 
 function App() {
-
- 
-
-
-
-
   return (
    <Calculadora />
   );
